@@ -1,4 +1,8 @@
-FROM 172.30.1.1:5000/openshift/php:7.1
+FROM registry.access.redhat.com/ubi8/ubi
+
+RUN yum --disableplugin=subscription-manager -y module enable php:7.2 \
+  && yum --disableplugin=subscription-manager -y install httpd php \
+  && yum --disableplugin=subscription-manager clean all
 
 ADD index.php /var/www/html
 
