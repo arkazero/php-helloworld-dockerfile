@@ -1,6 +1,4 @@
-FROM php:7.2-cli
-
-RUN yum -y install httpd php
+FROM php:7.2-apache
 
 ADD index.php /var/www/html
 
