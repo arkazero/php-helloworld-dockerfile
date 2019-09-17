@@ -1,8 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi
-
-RUN yum -y module enable php:7.2 \
-  && yum  -y install httpd php \
-  && yum  clean all
+FROM 172.30.1.1:5000/openshift/php:7.1
 
 ADD index.php /var/www/html
 
