@@ -1,9 +1,5 @@
 FROM php:7.2-cli
 
-RUN yum -y module enable php:7.2 \
-  && yum  -y install httpd php \
-  && yum  clean all
-
 ADD index.php /var/www/html
 
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
